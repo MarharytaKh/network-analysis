@@ -36,13 +36,6 @@ Requires Python 3.8+. No third-party libraries.
 - TLS: handshake records are detected by their bytes (0x16 0x03), SNI is not extracted
 - SIP: plain text only, uses the `Call-ID` and `CSeq` headers.
   Compact header forms (e.g. `i:`) are recognized but lightly tested
-
-## Notes / TODO
-
-- pcapng is not supported. Re-save the capture as pcap
-- IPv6 is currently skipped (counted as non-ipv4), needs to be added
-- SIP over TLS (5061) is not analyzed
-- TLS handshake detection runs on any port, not only 443. This is intentional,
   but it can occasionally match unrelated traffic
 - The whole file is read into memory. Large captures (>500 MB) will be slow and
   memory-hungry; streaming reads are planned
